@@ -18,7 +18,7 @@ The notebook implements a full ETL (Extract, Transform, Load) cycle:
 * Ingests weather data from an external Weather API and immediately cleans and normalizes it into a structured Delta table. This notebook extracts key features such as temperature, min/max values, sunrise/sunset times, and weather conditions while ensuring consistent schema and data quality.
 
 **2. Location Ingestion Description:**
-* Fetches restaurant and attraction data from the Google Places API and performs in-notebook normalization. Nested JSON fields (reviews, summaries, opening hours, parking options) are flattened and standardized before being written to Delta tables. 03_gold_daily_context.ipynb Description: Creates the Gold daily_context table by joining cleaned weather and restaurant + attarction datasets into a single, curated view of the day’s travel context.
+* Fetches restaurant and attraction data from the Google Places API and performs in-notebook normalization. Nested JSON fields (reviews, summaries, opening hours, parking options) are flattened and standardized before being written to Delta tables. 
 
 **3. LLM Travelling Recommendation:**
 * Reads the most recent record from the Gold daily_context table and sends structured prompt with specific inputs to Google Gemini. The LLM generates concise, weather-aware travel and dining recommendations suitable for end users.
